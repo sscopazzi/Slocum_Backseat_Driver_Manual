@@ -30,14 +30,12 @@ class extctl(object):
         self.send(b'TXT,%f' % (value))
                                   
 ###############################################################                        
-test=0
 
 serial.Serial(port_address, baudrate=uart_baud).close()
 x = extctl(port_address)
+port = serial.Serial(port_address, baudrate=uart_baud)
 
-while test == 0:
-    port = serial.Serial(port_address, baudrate=uart_baud)
-    x.write_SW(0, 42)   # update mission_param_a
-    x.write_TXT(42)     # print value to glider terminal
-    test = 1
-    print('d_target_depth updated, message sent')
+x.write_SW(0, 42)   # update mission_param_a one time
+x.write_TXT(42)     # print value to glider terminal
+
+print('d_target_depth updated, message sent')
