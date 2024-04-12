@@ -1,0 +1,6 @@
+# proglets.dat
+#
+proglet = extctl
+    uart       = j5         # place it's plugged in
+    bit        = 0          # power, battery
+    start_snsr = c_extctl_on(sec)

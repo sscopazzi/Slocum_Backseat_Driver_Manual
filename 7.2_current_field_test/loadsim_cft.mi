@@ -1,0 +1,74 @@
+#--------------------#
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+#--------------------#
+# loadsim_cft.mi
+# used as a CURRENT FIELD TEST (cft)
+# type loadmission loadsim_current_field_test.mi 
+#          to set these simulated values one time before starting simulation
+#
+# min = 200
+# max = 1500
+# speed = 0.6m/s
+#----------#-------------------------------------------------------------------#
+# generics #
+#----------#
+sensor: u_max_time_in_gliderdos(sec) -1.0   # in, run "sequence" after this much time
+                                            # in gliderdos without receiving a keystroke
+                                            # disabled in -lab mode
+                                            # disabled if <= 0
+
+sensor: f_max_working_depth(m) 110		# 100m w/ a deep pump so extra for overshoot		
+sensor: f_crush_depth(m) 1010			# it's a simulator, let's just not have this
+
+# don't want to touch bottom
+sensor: s_water_depth_avg(m)         	 1337 # want infinite deep ocean
+sensor: s_water_depth_delta(m)        	 0.0  # may as well be zero
+sensor: s_water_depth_wavelength(m) 	 0.0  # ^
+
+# don't want wind to move the glider when at the surface 
+sensor: s_wind_speed(m/s)      	0.0  		  # how fast the wind is blowing 
+sensor: s_wind_direction(rad)  	0.0  		  # Direction wind is blowing FROM
+
+# usual speed variable is unused, using xs_water_speed to have fast zone
+sensor: s_water_speed(m/s)	  	0.0     	  # Current speed, 0.5 ==> 1knot
+
+sensor: s_mag_var(rad) 0.0     # mag_heading = true_heading + mag_var
+                               # mag_var>0 ==>  variation is West (like on cape cod)
+
+# init position east of Yucatan for location consistency with goto
+sensor: s_ini_lat(deg)  		2100.0		  # commented out first in goto_cft
+sensor: s_ini_lon(deg) 		   -8630.0 
+
+#----------------------------#
+# current speed and location #
+#----------------------------#
+# initial direction before it is changed using SFMC script
+sensor: s_water_direction(rad)  0.00    	# due north (direction current is going TO)
+
+# current has a simulated location of higher speed between LMC coordinates. It looks like this - 
+#			|			 					 |
+#			|			 					 |
+#	slow	|			   fast 			 |	  slow
+#			|			 					 |
+#           |	 					    	 | 
+#	s_water_speed_fast_zone_x_min			 |
+#								     s_water_speed_fast_zone_x_max
+#
+# LMC are in meters from location the glider runs mission
+
+# to simulate a fast current between LMC coordinates
+# fast zone start < measured x lmc coordinate < fast zone end 
+#
+#	400 first surfacing, 500 current starts, 800 second surface, 1200 third surface, 1500 end current, 1600 surface
+#
+sensor: s_water_speed_fast(m/s) 0.6				# in, set to -1 to disable
+sensor: s_water_speed_fast_zone_x_min(m) 200 	# in
+sensor: s_water_speed_fast_zone_x_max(m) 1500	# in
+
+#--------------------#
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+#--------------------#

@@ -1,0 +1,32 @@
+#---------------------#
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+#---------------------#
+
+# INTERVAL              Seconds since last stored value, 0 is store every value
+# STATE                 State of glider (dive, hover, climb), 15 is always store
+# HALFYOS               # of dive/climbs in this segment to record for, -1 store for all
+# YO_DUTY_CYCLE         Store data every n'th yo in this segment, -1 is every dive/climb
+
+# --------------------------------------------------------------------
+# SENSOR NAME           INTERVAL  STATE     HALFYOS   YO_DUTY_CYCLE
+# (Defaults)            0         15        -1        -1
+# --------------------------------------------------------------------
+
+# Basic Data
+  sci_m_present_time		
+
+# testing from sbd file
+  m_lat							30	15	-1		# was 900
+  m_lon							30	15	-1		# was 900
+  m_avg_speed					30 	15 	-1 # was 900
+  m_water_vel_dir				30 	15 	-1 # added, was not here
+  m_water_vel_mag				30 	15 	-1 # added, was not here
+  
+
+#---------------------#
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+#---------------------#

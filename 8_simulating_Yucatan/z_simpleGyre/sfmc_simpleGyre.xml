@@ -1,0 +1,588 @@
+<gliderScript>
+
+    <!-- The start state of the script. -->
+    <initialState name="checkNoComms">
+        <transitions>
+            <!-- Must wait for glider to calculate water velocity! Send to to sendWaterSpeedDir -->
+            <transition matchExpression="Calculations COMPLETE" toState="sendWaterSpeedDir">
+            </transition>
+        </transitions>
+    </initialState>
+
+<!-- From checkNoComms. This sends updated current direction before sendResume. This state "simulates" a current field
+    by matching the longitude from surface dialogs, then !put s_water_direction and s_water_speed to what it should be for
+    the location of the glider before diving. It only reads the logitude part of the surface dialog, from following part
+    in quotes: sensor:m_lon(lon)='-8630'
+    -->
+    <state name="sendWaterSpeedDir">
+        <transitions>
+           <transition matchExpression="=-8630" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8629" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8628" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8627" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8626" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8625" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8624" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8623" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8622" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8621" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8620" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8619" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8618" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8617" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8616" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8615" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8614" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8613" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 0.7853981633974483">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8612" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8611" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8610" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8609" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8608" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8607" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8606" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8605" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8604" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8603" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8602" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8601" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8600" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8559" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8558" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8557" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8556" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8555" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 1.5707963267948966">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8554" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8553" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8552" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8551" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8550" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8549" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8548" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8547" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8546" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8545" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8544" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8543" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8542" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8541" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8540" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8539" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8538" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8537" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8536" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 2.356194490192345">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.2">
+              </action>
+            </transition>
+           <transition matchExpression="=-8535" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8534" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8533" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8532" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8531" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8530" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8529" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8528" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8527" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8526" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8525" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8524" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8523" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8522" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8521" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8520" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8519" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8518" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.141592653589793">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.4">
+              </action>
+            </transition>
+           <transition matchExpression="=-8517" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8516" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8515" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8514" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8513" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8512" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8511" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8510" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8509" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8508" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8507" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8506" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8505" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8504" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8503" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8502" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8501" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+           <transition matchExpression="=-8500" toState="sendResume">
+              <action type="glider" command="!put s_water_direction 3.9269908169872414">
+              </action>
+              <action type="glider" command="!put s_water_speed 0.6">
+              </action>
+            </transition>
+       </transitions>
+   </state>
+
+<!-- SEND RESUME/DIVE ========================================= -->
+    <state name="sendResume">
+        <transitions>
+            <transition matchExpression="xxx command verify fail xxx" toState="sendResume">
+            </transition>
+            <!-- Ready to dive, but send report first! MUST SEND TWO CTLR-R'S OR ELSE IT DOESN'T WORK
+                 Script needs more time after the !put so sends two -->
+            <transition matchExpression="Hit Control-R to RESUME" toState="checkNoComms">
+                <action type="glider" command="Ctrl-R">
+                </action>
+                <action type="glider" command="Ctrl-R">
+                </action>
+            </transition>
+            <transition timeout="10" toState="checkNoComms">
+            </transition>
+        </transitions>
+    </state>
+
+    <finalState name="final">
+    </finalState>
+</gliderScript>

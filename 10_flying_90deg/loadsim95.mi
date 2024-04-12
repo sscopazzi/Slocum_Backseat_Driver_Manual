@@ -1,0 +1,52 @@
+#--------------------#
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+#--------------------#
+# loadsim_cft.mi
+# used for 90deg_bsd.mi
+# type loadmission loadsim95.mi 
+#      to set these simulated values one time before starting simulation
+#
+#----------#-------------------------------------------------------------------#
+# generics #
+#----------#
+sensor: u_max_time_in_gliderdos(sec) -1.0   # in, run "sequence" after this much time
+                                            # in gliderdos without receiving a keystroke
+                                            # disabled in -lab mode
+                                            # disabled if <= 0
+
+sensor: f_max_working_depth(m) 1050		# 100m w/ a deep pump so extra for overshoot		
+sensor: f_crush_depth(m) 1100			# it's a simulator, let's just not have this
+
+# don't want to touch bottom
+sensor: s_water_depth_avg(m)         	 1337 # want infinite deep ocean
+sensor: s_water_depth_delta(m)        	 0.0  # may as well be zero
+sensor: s_water_depth_wavelength(m) 	 0.0  # ^
+
+# don't want wind to move the glider when at the surface 
+sensor: s_wind_speed(m/s)      	0.0  		  # how fast the wind is blowing 
+sensor: s_wind_direction(rad)  	0.0  		  # Direction wind is blowing FROM
+
+# unused, so put to -1
+sensor: s_water_speed_fast(m/s) -1		# in, set to -1 to disable
+
+sensor: s_mag_var(rad) 0.0     # mag_heading = true_heading + mag_var
+                               # mag_var>0 ==>  variation is West (like on cape cod)
+
+# init position east of Yucatan for location consistency with goto
+sensor: s_ini_lat(deg)  		2100.0
+sensor: s_ini_lon(deg) 		   -8630.0 
+
+#-----------------------------#
+# current speed and direction #
+#-----------------------------#
+# initial direction before by changed using SFMC script
+sensor: s_water_direction(rad)  0.0    
+sensor: s_water_speed(m/s)	  	0.0     
+
+#--------------------#
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+# FOR USE ON SPECTRE #
+#--------------------#

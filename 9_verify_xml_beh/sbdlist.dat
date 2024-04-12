@@ -1,0 +1,175 @@
+#-------------------------#
+# ONLY USE ON ru17 _ghost #
+# ONLY USE ON ru17 _ghost #
+# ONLY USE ON ru17 _ghost #
+#-------------------------#
+
+# 2020/3/5		dkaragon		added iridium call/dialed
+# 2023/11/3     sscopazzi		altered for bs_cft.mi test
+							#  m_tot_num_inflections changed
+							# m_x_lmc and y changed
+# 2023/11/6		sscopazzi
+							# c_heading, m_heading changed
+							# m_lat, m_lon changed
+# this is not a small file anymore!
+# this is not a small file anymore!
+# this is not a small file anymore!
+
+# INTERVAL              Seconds since last stored value, 0 is store every value
+# STATE                 State of glider (dive, hover, climb), 15 is always store
+# HALFYOS               # of dive/climbs in this segment to record for, -1 store for all
+# YO_DUTY_CYCLE         Store data every n'th yo in this segment, -1 is every dive/climb
+
+# --------------------------------------------------------------------
+# SENSOR NAME           INTERVAL  STATE     HALFYOS   YO_DUTY_CYCLE
+# (Defaults)            0         15        -1        -1
+# --------------------------------------------------------------------
+
+# 1  diving
+# 2  hovering
+# 3  diving|hovering
+# 4  climbing
+# 5  diving|climbing
+# 6  hovering|climbing
+# 7  diving|hovering|climbing
+# 8  on_surface
+# 9  diving|on_surface
+# 10 hovering|on_surface
+# 11 diving|hovering|on_surface
+# 12 climbing|on_surface
+# 13 diving|climbing|on_surface
+# 14 hovering|climbing|on_surface
+# 15 diving|hovering|climbing|on_surface
+
+# Basic Data
+  m_present_time
+  
+  m_tot_num_inflections			900	8	-1	2 # was "900 8", but to be sure updates enough lets do 15
+  
+  x_software_ver				900	8	 1
+  
+  m_leakdetect_voltage  		900
+  m_leakdetect_voltage_forward	900
+  m_leakdetect_voltage_science	900
+  m_digifin_leakdetect_reading	900
+  
+  m_veh_temp            		900
+  m_vehicle_temp				900
+  
+  m_coulomb_amphr       		900
+  m_coulomb_amphr_total			900
+  
+  m_vacuum              		900
+  m_comms_tickle_timestamp		1800
+  m_battery_inst				60		7	2
+  m_bms_emergency_battery_voltage	900	15	-1	2
+  m_bms_pitch_current			900		15	-1	2
+  m_bms_ebay_current			900		15	-1	2
+  m_bms_aft_current				900		15	-1	2
+  
+  c_science_send_all
+  x_cycle_overrun_in_ms			900		15	2
+  x_low_power_status			900		7	2
+  c_weight_drop					900
+  m_weight_drop					900
+  m_cop_tickle_timestamp		900
+  m_science_clothesline_lag		900
+  
+  m_iridium_call_num			0		8
+  m_iridium_dialed_num			0		8
+  m_iridium_attempt_num			0		8
+  
+# Positioning and Waypoint
+  m_gps_lon
+  m_gps_lat
+  m_lat							120	15	-1		# was 900
+  m_lon							120	15	-1		# was 900
+  m_gps_status					30
+  m_gps_mag_var
+
+  m_water_vx
+  m_water_vy
+  m_final_water_vx
+  m_final_water_vy
+  m_x_lmc						120	15	-1 # was "60 8"	
+  m_y_lmc						120	15	-1 # ^
+  x_lmc_xy_source				60	8
+  c_wpt_x_lmc					60	8
+  c_wpt_y_lmc					60	8
+  c_wpt_lat
+  c_wpt_lon
+  m_avg_speed					900
+
+
+# Flight Parameters
+  u_reqd_depth_at_surface
+  f_ocean_pressure_min
+  f_ocean_pressure_max
+  u_low_power_cycle_time
+  u_alt_filter_enabled
+  u_min_water_depth
+  u_alt_min_depth
+  f_fin_offset
+  x_fin_deadband
+  x_fin_max
+  u_hd_fin_ap_gain
+  u_hd_fin_ap_igain
+  u_hd_fin_ap_dgain
+  u_heading_deadband
+  u_heading_rate_deadband
+  u_hd_fin_ap_deadband_reset
+  u_hd_fin_ap_inflection_holdoff
+  u_hd_fin_ap_hardover_holdoff
+  u_pitch_ap_gain
+  u_pitch_ap_dgain
+  u_pitch_ap_deadband
+  u_pitch_max_delta_battpos
+  u_low_power_cycle_time
+  u_science_low_power
+  u_low_power_hd_fin_ap_gain
+  u_low_power_hd_fin_ap_igain
+  u_low_power_hd_fin_ap_dgain
+  
+# Yo params
+  c_climb_target_depth			30	7	2
+  c_dive_target_depth			30	7	2
+  x_current_target_altitude		60	7	1
+
+# Engineering Data
+  m_pitch               	40 	7	-1	2
+  m_roll                	60  7   4	2
+
+  c_heading             	120	15	-1	# 900 7 
+  m_heading					120	15	-1	# was 360  7  -1  2
+  m_hdg_error				20	7	4
+  m_hdg_derror				20	7	4	2
+  m_hdg_ierror				20	7	4	2
+  m_fin                 	20  7   4
+  c_fin						40	7	4	
+  m_dip_angle				900	7	2
+  m_magnetic_field			900 7	2
+
+  c_ballast_pumped			360	7	4
+  m_ballast_pumped			60	7	8	2
+  m_battpos             	60  7   2
+  
+  c_thruster_on				60	7	2
+  m_thruster_power			60	7	2
+  x_thruster_state			60	7	2
+
+  m_pressure            	120	15	-1	# was 45
+  m_depth                   120 15	-1	# was 30 8 and nothing else
+  m_depth_rate_avg_final	120	7	4
+  
+  c_alt_time				60	7	2
+  m_raw_altitude			45	3	3
+  m_water_depth				120 15  -1
+  
+# CTD Data
+#  sci_water_pressure		720
+  
+#-------------------------#
+# ONLY USE ON ru17 _ghost #
+# ONLY USE ON ru17 _ghost #
+# ONLY USE ON ru17 _ghost #
+#-------------------------#
