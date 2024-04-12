@@ -26,7 +26,7 @@ behavior_name=yo
 
     ### CLIMB_TO ARGUMENTS ###
 	# Depth Arguments
-		b_arg:  c_target_depth(m)       		15   ### visual flag ###
+		b_arg:  c_target_depth(m)       		5   ### visual flag ###
 		b_arg:  c_target_altitude(m)    		-1
 	# Ballast Pump Controls (absolute)
 		b_arg:  c_use_bpump(enum)    			2
