@@ -1,0 +1,116 @@
+#---------------------#
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+#---------------------#
+
+#----------------------#
+#   ADVANCED BSD       #
+#   - yo_94.ma         #
+#   - set_he94.ma      #
+#   - loadsim_cft94.mi #
+#----------------------#
+
+#-------------------------### Onboard Processing Specific Parameters ###------------------------------------------#
+sensor: u_allowable_cycle_overrun(msec) 		3000  	 # how large x_cycle_overrun_in_ms can be                 #
+sensor: u_mission_param_a(nodim)				1.570796 # 90deg = radians. Must init something					  #
+sensor: u_extctl_debug(nodim) 					1 		 # Received messages from RasPi displayed only			  #
+#-----------------------------------------------------------------------------------------------------------------#
+
+sensor: c_science_send_all(bool)					1	#
+#this was at 1 when it worked last
+sensor: c_science_all_on_enabled(bool)          	0 	# control science individually
+sensor: u_dbd_sensor_list_xmit_control(enum)    	3 	# 3  = never transmit header
+sensor: u_sci_dbd_sensor_list_xmit_control(enum)  	2 	# -1 = always transmit header, compatibility mode
+sensor: u_reqd_depth_at_surface(m) 					3 		# in, depths less than this considered "at surface"       #
+
+#-----------------#
+# mission generic #
+#-----------------#
+# ABORT BEHAVIOR
+behavior: abend
+    # OVERDEPTH: glider finds itself in > 110m of water
+    b_arg: overdepth(m)                     		1020
+    b_arg: overdepth_sample_time(sec)       		30
+
+    # OVERTIME: mission has run too long: 
+    b_arg: overtime(sec)                  			-1 # disables
+
+    # COP TICKLE: watchdog not tickled for 8 hours
+    b_arg: no_cop_tickle_for(sec)      				28800.0
+    
+    # SAMEDEPTH: 15 min every 60 seconds
+    b_arg: samedepth_for(sec)               		900.0
+    b_arg: samedepth_for_sample_time(sec)   		60.0
+    # STALLED FOR: 15 min every 60 seconds
+    b_arg: stalled_for(sec)                 		900.0
+    b_arg: stalled_for_sample_time(sec)     		60.0
+    
+    # HARDWARE: vacuum, battery; 10.75V alkaline, 9-10V Li3S, 13.5V Li4S, 12.75V LiIon     
+    b_arg: undervolts(volts)                		12.75
+    b_arg: undervolts_sample_time(sec)      		60.0
+    b_arg: vacuum_max(inHg)                 		12.0
+    b_arg: vacuum_sample_time(sec)          		60.0
+    
+    # WAYPOINT TOO FAR ABORT: 500km (500,000m)
+    b_arg: max_wpt_distance(m)              		500000
+	
+	# BUSY CPU CHECK
+	b_arg: max_allowable_busy_cpu_cycles(cycles)	75
+	
+	# Use thruster
+	b_arg: use_thruster_for_ascent(bool)			0
+
+# SURFACE : Nothing commanded
+behavior: surface
+    b_arg: args_from_file(enum)     10  # mafiles/surfac10.ma
+    b_arg: start_when(enum)          1  # 1-stack idle
+# SURFACE : No comms 0
+behavior: surface
+    b_arg: args_from_file(enum)     40  # mafiles/surfac40.ma
+    b_arg: start_when(enum)         9   # BAW_EVERY_SECS After behavior arg "when_secs", from prior START if cycling
+
+# SURFACE : No comms 2 - mission end
+behavior: surface
+    b_arg: args_from_file(enum)     42  # mafiles/surfac40.ma
+    b_arg: start_when(enum)         12  # 12 No comms
+
+#--------------------------#
+# specific to this mission #
+#--------------------------#
+
+# HEADING: Command heading
+behavior: set_heading
+    b_arg: args_from_file(enum) 94 # >= 0 enables reading from mafiles/set_he<N>.ma
+    b_arg: start_when(enum) 0      # Options: 0,1,2,6,7,8,15
+    b_arg: end_action(enum) 2      # 0 = quit, 2 = resume
+
+# YO : Flight params
+behavior: yo
+    b_arg: args_from_file(enum)     94  # mafiles/yo95.ma
+    b_arg: start_when(enum)          2  # 
+    b_arg: end_action(enum)          2  #  
+
+#    BAW_STK_IDLE       1   // When stack is idle (nothing is being commanded)
+#    BAW_PITCH_IDLE     2   // When pitch is idle(nothing is being commanded)
+
+# SAMPLE : EXTCTL
+behavior: sample
+    b_arg: args_from_file(enum)     90 # 90 v11
+	
+#-----------------#
+# mission generic #
+#-----------------#
+# PREPARE TO DIVE : wait 12 min for GPS
+behavior: prepare_to_dive
+    b_arg: start_when(enum)         0   # 0-immediately
+    b_arg: wait_time(sec)           720 # wait time
+
+# SENSORS_IN : not sure what this does, assuming remaining sensor update
+behavior: sensors_in
+
+#---------------------#
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+# ONLY USE ON SPECTRE #
+#---------------------#

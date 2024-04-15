@@ -1,0 +1,20 @@
+# proglets.dat
+#
+proglet = extctl
+    uart       = j5         # place it's plugged in
+    bit        = 0          # power, battery
+    start_snsr = c_extctl_on(sec)
+
+proglet = ctd41cp
+    uart       = j4         # connector
+    bit        = 0          # power, battery
+    start_snsr = c_profile_on(sec)
+    simulator  = ctd41cp_sim
+
+# other that has mode
+#proglet = ctd41cp
+#    uart =     j3   # connector
+#    bit  =     0    # power, battery
+#    bit  =     5    # MODE
+#    start_snsr=c_profile_on(sec)
+#    simulator = ctd41cp_sim
