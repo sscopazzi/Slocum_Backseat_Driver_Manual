@@ -1,0 +1,11 @@
+**a_from_glider**: contains .sbd files from the glider sim
+
+**b_cac_files**: the .cac files used to process the .sbd files above
+
+**c_plots**: Outputs from sendHeadDir_advanced_application_notebook
+
+**d_external_controller_files**: the application .py, launcher.sh, cronlogs and script_times.txt outputs
+
+**e_to_flight_computer**: files to flight computer on the simulator
+
+**f_to_science_computer**: Files to science computer on the simulator
