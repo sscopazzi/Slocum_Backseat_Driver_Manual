@@ -1,0 +1,5 @@
+**a_from_glider**: contains .sbd files from the glider sim
+
+**b_plots_from_mission**: verify_script_behavior.ipynb to plot the .sbds to check that the sim is working as intended
+
+**Rest of the files** are for the flight computer (no science computer files)
