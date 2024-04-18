@@ -1,6 +1,6 @@
 **simCTD**: contains both ways to simulate with a CTD:
 1. simCTD_synthetic.py: The fully synthetic (fake data) CTD
-2. simCTD_file.py: 
+2. simCTD_file.py: using a .dbd file containing glider data 
 
 **to_external_controller**: example_a.py and example_c.py
 
