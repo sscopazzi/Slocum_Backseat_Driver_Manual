@@ -1,11 +1,17 @@
-**b_alternate_current_field_simpleGyre**: an alternate version of a current field. Shows another possibility than used here
+## **b_alternate_current_field_simpleGyre**
+An alternate version of a current field. Shows another possibility than used here
 
-**b_from_glider**: .sbd files from spectre and ru17_ghost (ran it twice, with each sim at a different heading)
+## **b_from_glider**
+.sbd files from spectre and ru17_ghost (ran it twice, with each sim at a different heading)
 
-**attempt_at_incorporating_latitude.ipynd**: my attempt to incorporate latitude that was abandoned. Here in case anyone wants to finish this effort
+## **attempt_at_incorporating_latitude.ipynd**
+My attempt to incorporate latitude that was abandoned. Here in case anyone wants to finish this effort
 
-**z_sendWaterSpeedDir.xml**: the SFMC script that has two values. Starts with a z for easy finding on SFMC 
+## **z_sendWaterSpeedDir.xml**
+The SFMC script that has two values. Starts with a z for easy finding on SFMC 
 
-**z_sendWaterSpeedDir.xml**: the SFMC script that has four values. Starts with a z for easy finding on SFMC
+## **z_sendWaterSpeedDir.xml**
+The SFMC script that has four values. Starts with a z for easy finding on SFMC
 
-**z_sendWaterSpeedDir.png**: a map of what the SFMC script looks like
+## **z_sendWaterSpeedDir.png**
+Map of what the SFMC script looks like

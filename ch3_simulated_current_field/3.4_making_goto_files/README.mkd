@@ -1,0 +1,5 @@
+## **OpenCPN2Goto.py**
+Make an OpenCPN route into a Slocum glider goto file. Also makes a Folium interactive map to view waypoint locations in a web browser (good for sharing online)
+
+## **KML2Goto.py**
+Make a .kml waypoint list into a Slocum glider goto file

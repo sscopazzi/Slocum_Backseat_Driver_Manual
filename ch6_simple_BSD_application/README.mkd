@@ -1,11 +1,17 @@
-**a_from_glider**: contains .sbd files from the glider sim
+## **a_from_glider**
+Contains .sbd files from the glider sim
 
-**b_cac_files**: the .cac files used to process the .sbd files above
+## **b_cac_files**
+The .cac files used to process the .sbd files above
 
-**c_plots**: Outputs from simple_BSD_plot_notebook.ipynb, a Python notebook used to view results from running this mission
+## **c_plots**
+Outputs from simple_BSD_plot_notebook.ipynb, a Python notebook used to view results from running this mission
 
-**d_external_controller_files**: the application .py, launcher.sh, and cronlog
+## **d_external_controller_files**
+The application .py, launcher.sh, and cronlog
 
-**e_to_flight_computer**: files to flight computer on the simulator
+## **e_to_flight_computer**
+Files to flight computer on the simulator
 
-**f_to_science_computer**: Files to science computer on the simulator
+## **f_to_science_computer**
+Files to science computer on the simulator

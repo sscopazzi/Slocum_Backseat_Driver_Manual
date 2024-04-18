@@ -1,11 +1,16 @@
-**simCTD**: contains both ways to simulate with a CTD:
+## **simCTD**
+Contains both ways to simulate with a CTD:
 1. simCTD_synthetic.py: The fully synthetic (fake data) CTD
 2. simCTD_file.py: using a .dbd file containing glider data 
 
-**to_external_controller**: example_a.py and example_c.py
+## **to_external_controller**
+Example_a.py and example_c.py
 
-**to_flight_computer**: files to flight computer on the simulator
+## **to_flight_computer**
+Files to flight computer on the simulator
 
-**to_science_computer**: Files to science computer on the simulator
+## **to_science_computer**
+Files to science computer on the simulator
 
-**z_simulation_outputs**: Examples for what the files should look like, from the simulations ran for the creation of the manual
+## **z_simulation_outputs**
+Examples for what the files should look like, from the simulations ran for the creation of the manual

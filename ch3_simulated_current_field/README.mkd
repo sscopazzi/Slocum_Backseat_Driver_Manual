@@ -1,9 +1,14 @@
-**3.4_making_goto_files**: three different ways to make a goto file
+## **3.4_making_goto_files**
+Two different ways to make a goto file
 
-**3.7_plotting_current_field_test**: plotting the results of the current field test. Has a .py and a .ipynb. They both do the same thing.
+## **3.7_plotting_current_field_test**
+Plotting the results of the current field test. Has a .py and a .ipynb. They both do the same thing.
 
-**to_flight_computer**: files sent here
+## **to_flight_computer**
+Files sent here
 
-**to_science_computer**: files sent here
+## **to_science_computer**
+Files sent here
 
-**depth_print.py**: the .py for the external controller, commanding a new target depth and printing the number to the glider terminal
+## **depth_print.py**
+The .py for the external controller, commanding a new target depth and printing the number to the glider terminal
