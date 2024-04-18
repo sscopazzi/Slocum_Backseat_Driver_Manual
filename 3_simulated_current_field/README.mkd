@@ -1,7 +1,0 @@
-**to_flight_computer**: files sent here
-
-**to_science_computer**: files sent here
-
-**3.4_making_goto_files**: three different ways to make a goto file
-
-**3.3.7_plotting_current_field_test**: plotting the results of the current field test. Has a .py and a .ipynb. They both do the same thing.

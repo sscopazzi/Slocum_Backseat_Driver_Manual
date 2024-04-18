@@ -2,4 +2,4 @@
 
 **b_plots_from_mission**: verify_script_behavior.ipynb to plot the .sbds to check that the sim is working as intended
 
-**Rest of the files** are for the flight computer (no science computer files)
+**to_flight_computer**: files only are for the flight computer (no science computer files)

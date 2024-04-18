@@ -2,7 +2,7 @@
 
 **b_cac_files**: the .cac files used to process the .sbd files above
 
-**c_plots**: Outputs from sendHeadDir_advanced_application_notebook.ipynb
+**c_plots**: Outputs from sendHeadDir_advanced_application_notebook.ipynb, the Python notebook used to view results from this mission (basically the same as the simple case)
 
 **d_external_controller_files**: the application .py, launcher.sh, cronlogs and script_times.txt outputs
 
