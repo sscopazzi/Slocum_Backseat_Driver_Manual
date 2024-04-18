@@ -1,7 +1,7 @@
 # Slocum_Backseat_Driver_Manual 
 ## Implementing the Backseat Driver Architecture on a G3S Slocum Glider: A Manual for Operators
 
-**I recommend downloading the PDF as the contents page is designed to be clickable for easy navigation**. This manual is a starting point for anyone who wants to implement the Slocum backseat driver architecture on a G3S Slocum glider. It also may be regarded as everything required to replicate, follow along, and/or continue with my thesis work as this manual is complementary to my Master's thesis *Sensor and Behavior Frameworks for Implementing Backseat Driver on a Slocum Glider*.
+**I recommend downloading the PDF as the contents page is designed to be clickable for easy navigation**. This manual is a starting point for anyone who wants to implement the Slocum backseat driver architecture on a G3S Slocum glider. It also may be regarded as everything required to replicate, follow along, and/or continue with my thesis work as this manual is complementary to my Master's thesis *Sensor and Behavior Frameworks for Implementing Backseat Driver on a Slocum Glider* (completed at Rutgers University, 2024)
 
 ## How to Use This GitHub and the Manual
 
