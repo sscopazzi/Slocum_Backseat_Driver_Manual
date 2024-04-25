@@ -1,0 +1,9 @@
+## **images_of_parts**
+
+Photos of the connector and how the external controller (Raspberry Pi) is connected to the glider simulator. These photos are in the manual, but provided stand-alone here for ease of access if needed. 
+
+## **!wire_diagram_backseat_connector.pdf**
+Stand-alone PDF of the wire diagram for ease of access outside the manual. 
+
+#
+The rest are images or documents you may find helpful. 
